@@ -20,6 +20,10 @@ namespace PCHandsfree
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
+                    webBuilder.ConfigureAppConfiguration((hostingContext, config) =>
+                    {
+                        config.AddEnvironmentVariables("PC_HANDSFREE_");
+                    });
                     webBuilder.UseStartup<Startup>();
                 });
     }
