@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        @if (this.ViewData.ContainsKey("title"))
+        {
+            @this.ViewData["title"];
+        }
+        else
+        {
+            this.WriteLiteral("PC Handsfree");
+        }
+    </title>
+    <link rel="stylesheet" href="/site.css" />
+</head>
+<body>
+    @RenderBody()
+    @if (IsSectionDefined("Scripts"))
+    {
+        @RenderSection("Scripts")
+    }
+</body>
+</html>
